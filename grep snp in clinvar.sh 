@@ -1,0 +1,26 @@
+## grep from a list 
+
+## grep SNP info from list gene in clinvar on sherlock
+##1. clone clinvar data from github : git clone https://github.com/macarthur-lab/clinvar.git
+
+### extract data from clinvar_alleles
+cd /oak/stanford/groups/jpriest/catherine/clinvar.data
+
+## view the data 
+
+zcat clinvar/output/b37/single/clinvar_alleles.single.b37.tsv.gz | wc -l 
+
+### extract snp info for my set of gene
+
+
+ zcat clinvar_alleles.single.b37.tsv.gz | grep -F -f gene_list.txt > clinvar.select.gene.tsv
+
+ ## get the header
+
+zcat clinvar_alleles.single.b37.tsv.gz | head -n+1 > header.clinvar.txt; cat header.clinvar.txt clinvar.select.gene.tsv > tmp; mv tmp clinvar.select.gene.tsv
+
+
+ ## copy the file to my computer
+
+ scp tcheandj@login.sherlock.stanford.edu://oak/stanford/groups/jpriest/catherine/clinvar.data/clinvar.select.gene.tsv /Users/catherine.t/Documents/PheWas_syndromic_diseases/tableau_results_phewas/
+
