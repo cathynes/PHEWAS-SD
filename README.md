@@ -8,4 +8,4 @@ This set of code is to perform a PHEWAS of multiple genes and phenotypes. The ph
 
 1. Perform the analysis at the SNP levels then at the genes levels
 
-1. Organize the results with tablle and figure 
+1. Organize the results with tables and figures 
